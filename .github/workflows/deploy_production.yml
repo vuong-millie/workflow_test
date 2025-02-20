@@ -11,13 +11,15 @@ on:
 jobs:
   deploy-production:
     runs-on: ubuntu-latest
-      # Ensure the workflow only runs on the main branch
     if: github.ref == 'refs/heads/main'
+      # Ensure the workflow only runs on the main branch
+    
     steps:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
     - name: Deploy to PROD
+      if: github.ref == 'refs/heads/main'
       run: |
         echo "Deploying to PROD env"
