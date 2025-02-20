@@ -15,4 +15,5 @@ jobs:
     - name: Deploy to PROD
       run: |
         echo "Deploying to PROD env"
-  
+      # Ensure the workflow only runs on the main branch
+    if: github.ref == 'refs/heads/main'
