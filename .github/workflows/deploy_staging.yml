@@ -1,0 +1,21 @@
+name: deploy-to-staging
+
+on:
+  push:
+    branches:
+      - wip/cicd # TODO: Remove this test branch
+      - develop
+      - release/*
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Deploy to staging
+      run: |
+        - echo "Deploying to staging env"
