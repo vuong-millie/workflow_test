@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  deploy-staging:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -18,4 +18,4 @@ jobs:
 
     - name: Deploy to staging
       run: |
-        - echo "Deploying to staging env"
+        echo "Deploying to staging env"

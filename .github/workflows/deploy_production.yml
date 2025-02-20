@@ -6,7 +6,7 @@ on:
 
 
 jobs:
-  deploy:
+  deploy-production:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -15,5 +15,5 @@ jobs:
 
     - name: Deploy to PROD
       run: |
-        - echo "Deploying to PROD env"
+        echo "Deploying to PROD env"
   
