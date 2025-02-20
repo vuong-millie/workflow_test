@@ -3,7 +3,7 @@ name: deploy-to-staging
 on:
   push:
     branches:
-      - wip/cicd # TODO: Remove this test branch
+      - actions # TODO: Remove this test branch
       - develop
       - release/*
   workflow_dispatch:
