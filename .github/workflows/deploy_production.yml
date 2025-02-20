@@ -1,12 +1,13 @@
 name: deploy-to-production
 
 on:
-  workflow_dispatch:  # Allow manual triggering from the GitHub UI
-
+  workflow_dispatch:
 
 jobs:
   deploy-production:
     runs-on: ubuntu-latest
+      # Ensure the workflow only runs on the main branch
+    if: github.ref == 'refs/heads/main'
     steps:
     - uses: actions/checkout@v4
       with:
@@ -15,5 +16,3 @@ jobs:
     - name: Deploy to PROD
       run: |
         echo "Deploying to PROD env"
-      # Ensure the workflow only runs on the main branch
-    if: github.ref == 'refs/heads/main'
